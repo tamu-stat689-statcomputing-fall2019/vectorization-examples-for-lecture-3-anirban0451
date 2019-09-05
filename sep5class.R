@@ -15,3 +15,13 @@ computeT_for <- function(X, group)
   }
   return(Tstats)
 }
+
+computeT_for2 <- function(X,group)
+{
+  Tstats <- rep(0,p)
+  for (j in 1:p)
+  {
+    Tstat[j] <- t.test(X[group == 1,j],X[group == 2,j])$stat
+  }
+  return(Tstats)
+}
